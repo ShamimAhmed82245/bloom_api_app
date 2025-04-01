@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import PredictBloomLevel
+from .views import predict, predict_transformer
 
 urlpatterns = [
-    path('predict/', PredictBloomLevel.as_view(), name='predict'),
+    path('predict/', predict, name='predict'),
+    path('predict_transformer/', predict_transformer, name='predict_transformer'),
 ]
