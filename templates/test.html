@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prediction Test</title>
+</head>
+
+<body>
+    <div>
+        <textarea id="text" rows="4" cols="50" placeholder="Enter text to predict"></textarea>
+        <br>
+        <select id="model">
+            <option value="bert">BERT</option>
+            <option value="distilbert">DistilBERT</option>
+            <option value="roberta">RoBERTa</option>
+        </select>
+        <button onclick="predict()">Predict</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8000/ws/predict/');
+
+        socket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        };
+
+        function predict() {
+            const text = document.getElementById('text').value;
+            const model = document.getElementById('model').value;
+            socket.send(JSON.stringify({
+                text: text,
+                model_type: model
+            }));
+        }
+    </script>
+</body>
+
+</html>

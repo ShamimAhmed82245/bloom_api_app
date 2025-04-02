@@ -50,3 +50,56 @@ Loading model: lr_ngram
 Getting transformer prediction for model: bert
 Getting transformer prediction for model: distilbert
 Getting transformer prediction for model: roberta
+Received prediction request - model_type: all, text length: 129
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Getting transformer prediction for model: distilbert
+Getting transformer prediction for model: roberta
+Error in predict view: Unsupported media type "application/x-www-form-urlencoded" in request.
+Error in predict view: Unsupported media type "application/x-www-form-urlencoded" in request.
+Error in predict view: Unsupported media type "application/x-www-form-urlencoded" in request.
+Received prediction request - model_type: bert, text length: 129
+Error during prediction: The `request` argument must be an instance of `django.http.HttpRequest`, not `rest_framework.request.Request`.
+Received prediction request - model_type: all, text length: 129
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Getting transformer prediction for model: distilbert
+Getting transformer prediction for model: roberta
+Error loading model roberta: The paging file is too small for this operation to complete. (os error 1455)
+Error in get_transformer_prediction: Error loading model roberta: The paging file is too small for this operation to complete. (os error 1455)
+Received prediction request - model_type: all, text length: 129
+Getting transformer prediction for model: bert
+Getting transformer prediction for model: distilbert
+Getting transformer prediction for model: roberta
+Received prediction request - model_type: lr_ngram, text length: 129
+Loading model: lr_ngram
+Received prediction request - model_type: all, text length: 129
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Getting transformer prediction for model: bert
+Getting transformer prediction for model: distilbert
+Getting transformer prediction for model: roberta
+Error loading model roberta: The paging file is too small for this operation to complete. (os error 1455)
+Error in get_transformer_prediction: Error loading model roberta: The paging file is too small for this operation to complete. (os error 1455)
+Received prediction request - model_type: svm_ngram, text length: 129
+Received prediction request - model_type: all, text length: 129
+Getting transformer prediction for model: bert

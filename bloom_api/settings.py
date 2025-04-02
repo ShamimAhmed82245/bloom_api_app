@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-eh@fm&!+iv!!j4a^ft)itl7%qvhg-+s4e63+*h-w7i$9xuu$)a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # For development only, configure properly for production
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'prediction',
 ]
+
+INSTALLED_APPS += ['channels']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'bloom_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Update this line
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +72,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bloom_api.wsgi.application'
+
+ASGI_APPLICATION = 'bloom_api.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
+
+# Worker pool settings
+PREDICTION_WORKER_TIMEOUT = 300  # 5 minutes
+MAX_WORKERS = 2  # Limit concurrent model predictions
 
 
 # Database
@@ -142,4 +159,16 @@ LOGGING = {
             'level': 'DEBUG',
         },
     },
+}
+
+# Add REST_FRAMEWORK settings
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+    'UNICODE_JSON': True
 }
