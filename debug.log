@@ -1,0 +1,52 @@
+Received prediction request - model_type: all, text length: 38
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: xgb_ngram
+Handling XGBoost model
+XGBoost handling error: 'Pipeline' object has no attribute 'save_model'
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Received prediction request - model_type: all, text length: 38
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Received prediction request - model_type: lr_ngram, text length: 38
+Loading model: lr_ngram
+Received prediction request - model_type: all, text length: 40
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Received prediction request - model_type: nb_ngram, text length: 40
+Loading model: nb_ngram
+Getting transformer prediction for model: bert
+Received prediction request - model_type: bert, text length: 14
+Error during prediction: The `request` argument must be an instance of `django.http.HttpRequest`, not `rest_framework.request.Request`.
+Received prediction request - model_type: all, text length: 38
+Loading model: knn
+Loading model: multinomial_nb
+Loading model: rf_ngram
+Loading model: svm_ngram
+Loading model: nb_trigram
+Loading model: nb_ngram
+Loading model: lr_trigram
+Loading model: lr_ngram
+Getting transformer prediction for model: bert
+Getting transformer prediction for model: distilbert
+Getting transformer prediction for model: roberta
